@@ -115,6 +115,9 @@
   function refreshSelects(dualListbox) {
     dualListbox.selectedElements = 0;
 
+    var pos1 = dualListbox.elements.select1.scrollTop(),
+      pos2 = dualListbox.elements.select2.scrollTop();
+
     dualListbox.elements.select1.empty();
     dualListbox.elements.select2.empty();
 
@@ -133,6 +136,10 @@
       filter(dualListbox, 2);
     }
     refreshInfo(dualListbox);
+
+    dualListbox.elements.select1.scrollTop(pos1);
+    dualListbox.elements.select2.scrollTop(pos2);
+
   }
 
   function filter(dualListbox, selectIndex) {
